@@ -619,9 +619,21 @@ export default function Dashboard() {
             <Search size={20} className="text-green-400" />
             <h2>Cerca un film</h2>
           </div>
-          <form onSubmit={searchTMDB} className="flex gap-4">
-            <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Digita il titolo..." className="flex-1 px-4 py-3 bg-gray-700 rounded-lg text-white outline-none" />
-            <button type="submit" disabled={loading} className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-bold">Cerca</button>
+         <form onSubmit={searchTMDB} className="flex flex-col sm:flex-row gap-4">
+            <input 
+              type="text" 
+              value={searchQuery} 
+              onChange={(e) => setSearchQuery(e.target.value)} 
+              placeholder="Digita il titolo..." 
+              className="w-full sm:flex-1 px-4 py-3 bg-gray-700 rounded-lg text-white outline-none" 
+            />
+            <button 
+              type="submit" 
+              disabled={loading} 
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-bold text-white"
+            >
+              Cerca
+            </button>
           </form>
           {movies.length > 0 && (
             <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
